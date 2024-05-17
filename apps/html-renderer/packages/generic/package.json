@@ -1,0 +1,31 @@
+{
+    "name": "@html-renderer/generic",
+    "version": "1.50.2",
+    "private": true,
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "start": "electron dist/test.js",
+        "build": "yarn rimraf dist && yarn build:main",
+        "build:main": "tsc -p tsconfig.json",
+        "__test": "jest"
+    },
+    "prettier": "@sofie-automation/code-standard-preset/.prettierrc.json",
+    "engines": {
+        "node": ">=18"
+    },
+    "lint-staged": {
+        "*.{js,css,json,md,scss}": [
+            "prettier"
+        ],
+        "*.{ts,tsx}": [
+            "eslint"
+        ]
+    },
+    "dependencies": {
+        "electron": "^30.0.6"
+    },
+    "devDependencies": {
+        "rimraf": "^5.0.5"
+    }
+}
